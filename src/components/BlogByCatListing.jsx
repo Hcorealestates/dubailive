@@ -5,7 +5,7 @@ import PostItem from "@/components/post-item";
 import Pagination from "@/components/pagination";
 import LoadingCustom from '@/components/loading-custom';
 
-export default function BlogByCatListing( { CatId }) {
+export default function BlogByCatListing( { CatId, blogCatUrl }) {
   const searchParams = useSearchParams()
   const page = searchParams.get('page') ? searchParams.get('page') : "1";
   const currentpage = searchParams.get('page') ? searchParams.get('page') : "1";
@@ -40,7 +40,7 @@ export default function BlogByCatListing( { CatId }) {
       })
   }, [CatId, page]);
 
-  const pageName = 'post';
+  const pageName = blogCatUrl;
 
   return (
     <>

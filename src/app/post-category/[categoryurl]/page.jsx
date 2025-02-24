@@ -31,8 +31,8 @@ export default async function PostCategory({ params }) {
         <link rel="canonical" href={blogCatData.url} />
         <main>
           <section className="wrapper pb-16">
-            <h1 className="text-2xl lg:text-[3vw] leading-tight py-6"><TextComponent itemObj={StaticPage.blogcat_listingheading} /></h1>
-            <BlogByCatListing CatId={blogCatData.id} />
+            <h1 className="text-2xl lg:text-[3vw] leading-tight py-6"><TextComponent itemObj={blogCatData.h1} /></h1>
+            <BlogByCatListing CatId={blogCatData.id} blogCatUrl={params.categoryurl}  />
           </section>
         </main>
         </>
