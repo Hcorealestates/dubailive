@@ -1,3 +1,5 @@
+export const revalidate = 5 * 60
+import { notFound } from 'next/navigation';
 import Footer from "@/components/footer";
 import Header from "@/components/header";
 import getHomeCompleteData from "@/api/getHomeCompleteData";
@@ -17,22 +19,23 @@ export default async function PostCategory({ params }) {
   const blogCatRes = await singleBlogCat;
   const blogCatData = blogCatRes.blogCatdata;
 
+  if (blogCatRes.message != 'success') {
+    notFound();
+  }
+
   return <>
     <Header headerObj={pagedata} />
-      {blogCatRes.message == 'success' ?
-        <>
-          <title>{blogCatData.seotitle}</title>
-          <meta name="description" content={blogCatData.seodesc} />
-          <link rel="canonical" href={blogCatData.url} />
-          <main>
-            <section className="wrapper pb-16">
-              <h3 className="text-2xl lg:text-[3vw] leading-tight py-6"><TextComponent itemObj={StaticPage.blogcat_listingheading} /></h3>
-              <BlogByCatListing CatId={blogCatData.id} />
-            </section>
-          </main>
-          </>
-        : <NotFound />
-      }
+      <>
+        <title>{blogCatData.seotitle}</title>
+        <meta name="description" content={blogCatData.seodesc} />
+        <link rel="canonical" href={blogCatData.url} />
+        <main>
+          <section className="wrapper pb-16">
+            <h1 className="text-2xl lg:text-[3vw] leading-tight py-6"><TextComponent itemObj={StaticPage.blogcat_listingheading} /></h1>
+            <BlogByCatListing CatId={blogCatData.id} />
+          </section>
+        </main>
+        </>
     <Footer footerProject={result.footerproject} footerComm={result.footercomm} pageData={pagedata} staticInfo={result.staticpagedata} />
   </>;
 }

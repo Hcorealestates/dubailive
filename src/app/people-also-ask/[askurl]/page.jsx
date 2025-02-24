@@ -17,7 +17,6 @@ import PostHashMenu from "@/components/post-hash-menu";
 import PostItem from "@/components/post-item";
 import BlogAuthor from "@/components/blog-author";
 import TextComponent from "@/components/TextComponent";
-import NotFound from "../../not-found";
 
 export default async function AskSingle({ params }) {
   const props = getHomeCompleteData();
