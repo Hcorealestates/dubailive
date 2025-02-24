@@ -1,0 +1,223 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-sans), sans-serif;
+  --font-serif: var(--font-playfair), serif;
+  --foreground: #40444e;
+  --color-whatsapp: #25d366;
+  --color-phone: #28a745;
+  --color-facebook: #1877f2;
+  --color-linkedin: #0077b5;
+  --color-instagram: #c13584;
+  --color-telegram: #0077b5;
+  --color-primary-50: #eefff3;
+  --color-primary-100: #d8ffe7;
+  --color-primary-200: #b4fed0;
+  --color-primary-300: #79fcab;
+  --color-primary-400: #38f07f;
+  --color-primary-500: #0ed95e;
+  --color-primary-600: #05b449;
+  --color-primary-700: #088d3d;
+  --color-primary-800: #0c6f34;
+  --color-primary-900: #0c5b2d;
+  --color-primary-950: #003919;
+  --color-primary: #0c6f34;
+}
+
+body {
+  color: var(--foreground);
+  /* background: var(--background); */
+  font-family: var(--font-sans);
+}
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+  h1,
+  h2,
+  .h2,
+  h3,
+  h4,
+  h5 {
+    @apply font-serif font-semibold text-black/85;
+  }
+  b,strong{
+    @apply font-semibold text-black/80
+  }
+  button{
+    @apply cursor-pointer
+  }
+}
+
+@utility text-balance {
+  text-wrap: balance;
+}
+
+@utility wrapper {
+  @apply mx-auto max-w-7xl px-5 2xl:px-0;
+}
+
+@utility btn {
+  @apply rounded-lg px-2 py-2.5 text-center sm:px-5;
+}
+
+@utility btn-primary {
+  @apply bg-primary hover:bg-primary-700 focus:ring-primary/[.6] text-white ring-offset-1 active:ring-4;
+}
+
+@utility faq {
+  /* text-white bg-primary hover:bg-primary-700 focus:ring-4 ring-offset-1 focus:ring-primary/[.6]  */
+
+  & a {
+    @apply font-semibold text-blue-600 underline hover:no-underline;
+  }
+}
+
+@utility link {
+  @apply text-blue-600;
+}
+
+@utility feature {
+  & ul {
+    @apply ml-5 list-image-[url(/images/square-check.svg)] text-sm *:pl-2 marker:text-[28px];
+  }
+}
+
+@utility ebrochure {
+  & strong {
+    @apply text-primary my-2 block;
+  }
+  & p{
+    @apply text-justify;
+  }
+}
+
+@utility more {
+  & h5 {
+    @apply text-primary mt-4 text-xl;
+  }
+
+  & h5 strong {
+    @apply text-primary mt-4 text-xl;
+  }
+
+  & strong {
+    @apply mt-3 inline-block text-sm;
+  }
+  & ol {
+    @apply my-2 ml-6 list-decimal;
+  }
+  & li {
+    @apply py-1;
+  }
+}
+
+@utility payment {
+  & span {
+    @apply text-base text-nowrap;
+  }
+}
+
+@utility blog-middle {
+  & a {
+    @apply text-blue-600 underline hover:no-underline;
+  }
+}
+
+@utility text-editor {
+  & a {
+    @apply text-blue-600 underline hover:no-underline;
+  }
+
+  & h2 {
+    @apply text-primary mb-4 text-2xl;
+  }
+
+  & h3 {
+    @apply mb-3 text-xl;
+  }
+  & ul {
+    @apply mb-6 ml-5 list-outside list-disc space-y-2;
+  }
+  & ol {
+    @apply mb-6 ml-5 list-outside list-disc space-y-2;
+  }
+  & p {
+    @apply text-justify;
+  }
+  & p:not(:last-child) {
+    @apply mb-5 text-justify;
+  }
+}
+
+@layer components {
+  table {
+    @apply mb-6 w-full border-collapse border border-slate-400;
+  }
+  th,
+  td {
+    @apply border border-slate-300 p-2;
+  }
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  @apply bg-primary-600 size-9! rounded-full shadow-sm after:text-lg! after:font-bold after:text-white;
+}
+.swiper-button-prev {
+  /* @apply after:content-['prev']; */
+}
+.swiper-button-next {
+  /* @apply after:content-['next']; */
+}
+
+.foo-swiper {
+  @apply pb-14!;
+}
+
+.foo-swiper .swiper-button-next,
+.foo-swiper .swiper-button-prev {
+  @apply top-auto! bottom-0!;
+}
+
+.foo-swiper .swiper-button-prev {
+  @apply left-0!;
+}
+
+.foo-swiper .swiper-button-next {
+  @apply left-11!;
+}
+
+.rbt-input-main {
+  @apply focus:border-primary focus:ring-primary block w-full rounded-3xl border border-gray-300 bg-white py-4 pr-5 pl-12 text-black shadow-xs outline-hidden placeholder:text-sm placeholder:text-slate-400 placeholder:italic focus:ring-1 focus:shadow-xl focus:outline-hidden;
+}
+
+.project-search .rbt-input-main {
+  @apply py-2;
+}
+
+.rbt-menu {
+  @apply border-primary/10 rounded-xl border bg-white py-3 shadow-xl;
+}
+
+.dropdown-item {
+  @apply block w-full px-3 py-1.5 text-sm;
+}
+
+.dropdown-item.active,
+.dropdown-item:active {
+  @apply bg-primary-700/80 text-white;
+}
