@@ -19,7 +19,7 @@ export default function Header({ headerObj = false }) {
     { name: 'Communities', href: headerObj.communitiesurl, current: false },
     { name: 'Why Invest', href: headerObj.whyinvest, current: false },
     { name: 'Blogs', href: headerObj.posturl, current: false },
-    { name: 'Peopla Also Ask', href: headerObj.peoplealsoask, current: false },
+    { name: 'People Also Ask', href: headerObj.peoplealsoask, current: false },
   ]
 
   return (
