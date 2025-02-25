@@ -158,7 +158,7 @@ export default async function PostSingle({ params }) {
           </div>
 
           {/* Article Section */}
-          {blogRes.singlepostdesc.map(articleItem => <article key={articleItem.id} id={articleItem.hashUrl} className="pt-16 text-editor -mt-10">
+          {blogRes.singlepostdesc.map(articleItem => <article key={articleItem.id} id={articleItem.hashUrl} className="pt-16 text-editor">
             <h2>{articleItem.shortdesc}</h2>
             {articleItem.headingBanner && <figure className="mb-4">
               <Image src={articleItem.headingBanner} alt={articleItem.shortdesc} title={articleItem.shortdesc} className="w-full md:h-96 rounded-lg" width={700} height={400} />

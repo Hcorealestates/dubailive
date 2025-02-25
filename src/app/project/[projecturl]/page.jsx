@@ -185,7 +185,7 @@ export default async function ProjectPage({ params }) {
       <div className="wrapper max-w-5xl">
         <small className="text-base text-gray-500">Overview</small>
         {prop.h2 && <h3 className="text-2xl lg:text-4xl">{prop.h2}</h3>}
-        {prop.overhead && <span className="font-semibold block my-3 text-primary text-xl">{prop.overhead}</span>}
+        {prop.overhead && <span className="font-semibold block my-3 text-primary md:text-xl">{prop.overhead}</span>}
         <Overview overviewshortObj={prop.overshortdesc} overviewDesc={prop.overdesc} />
       </div>
     </section>
@@ -206,9 +206,9 @@ export default async function ProjectPage({ params }) {
         <small className="text-base text-gray-500">Amenities of</small>
         {prop.amenityhead && <h3 className="text-2xl lg:text-4xl">{prop.amenityhead}</h3>}
         {prop.amenitydesc && <TextComponent itemObj={prop.amenitydesc} className='mb-5' />}
-        <div className="flex flex-wrap gap-5 mt-4">
+        <div className="grid sm:grid-cols-4 sm:grid-flow-row grid-flow-col overflow-auto gap-5 mt-4 pb-2">
           {resultProp.amenities.splice(0, 4).map((amenity, index) =>
-            <div key={index} className="flex  flex-col gap-2 grow bg-primary/[.1] p-6 rounded-sm text-sm text-primary/[.9]">
+            <div key={index} className="flex  flex-col gap-2 grow bg-primary/[.1] p-6 rounded-sm text-sm text-primary/[.9] text-center text-nowrap">
               <FontAwesomeIcon icon={`fa-regular ${amenity.iconId}`} className="text-4xl" />
               {amenity.heading}
             </div>
@@ -237,11 +237,11 @@ export default async function ProjectPage({ params }) {
         {prop.locationhead && <div className="text-2xl lg:text-4xl mb-6 font-serif">{prop.locationhead}</div>}
         {prop.locationdesc && <TextComponent itemObj={prop.locationdesc} />}
       </div>
-      <ul className="grid gap-5 sm:grid-flow-row sm:grid-cols-2 md:grid-cols-4 grid-flow-col max-sm:overflow-auto">
+      <ul className="grid gap-5 sm:grid-flow-row sm:grid-cols-2 md:grid-cols-4 grid-flow-col max-sm:overflow-auto pb-2">
         {resultProp.localities.map((location) =>
           <li className="border p-4 pl-14 text-sm rounded-lg text-gray-700" key={location.id}>
             <FontAwesomeIcon icon={location.iconId} className="text-xl md:text-2xl -ml-10 float-left mt-2" />
-            <span className="block md:text-xl font-semibold">{location.heading}</span> <span className='  text-nowrap'>{location.description}</span>
+            <span className="block md:text-xl font-semibold text-nowrap">{location.heading}</span> <span className='  text-nowrap'>{location.description}</span>
           </li>
         )}
       </ul>
@@ -303,7 +303,7 @@ export default async function ProjectPage({ params }) {
     </section>
 
     {/* Ask Anything Section */}
-    <section className="wrapper pt-16">
+    <section className="wrapper pt-16 lg:pt-20">
       <div className="bg-primary/[.8] p-8 md:p-16 rounded-3xl flex flex-col gap-8 md:flex-row md:items-center">
         <div className="text-white">
           <div className="h2 text-2xl lg:text-4xl mb-3 text-primary-50">Ask Anything Anytime</div>

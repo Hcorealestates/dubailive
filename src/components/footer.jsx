@@ -153,7 +153,7 @@ export default function Footer({ footerProject = false, footerComm = false, page
     </WhatsappLink>
 
     {/* Footer Call to Action */}
-    {showAction && <div className="fixed bottom-0 z-10 flex lg:hidden w-full md:gap-4 border-t border-t-gray-200 bg-white h-16  divide-x divide-primary/20">
+    {showAction && <div className="bg-primary-50 fixed bottom-0 z-10 flex lg:hidden w-full md:gap-4 h-16  divide-x divide-primary/20 inset-shadow-sm inset-shadow-primary/10">
       {/* Project Price */}
       {isProjectDirectory &&
         (prop.proprice !== 'On Request' && <div className='grow self-center pl-4'>
@@ -164,8 +164,8 @@ export default function Footer({ footerProject = false, footerComm = false, page
         <FontAwesomeIcon className="text-2xl" icon={faWhatsapp} />
         <small className='block'>Whatsapp</small>
       </WhatsappLink>
-      <a href="" className='grow text-center text-phone self-center'><FontAwesomeIcon className="text-[20px]" icon={faPhone} /> <small className='block'>Call Us</small>
-      </a>
+      {staticInfo.callnumberstatic && <a href={`tel:${staticInfo.callnumberstatic.split(' ').join('')}`} className='grow text-center text-phone self-center'><FontAwesomeIcon className="text-[20px]" icon={faPhone} /> <small className='block'>Call Us</small>
+      </a>}
 
       <Modal className='grow bg-transparent hover:bg-transparent text-phone py-0 rounded-none px-0' projectName={whatsappMessage} ><FontAwesomeIcon className='text-2xl' icon={faEnvelope} />
         <small className='block'>Enquiry</small>
