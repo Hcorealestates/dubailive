@@ -24,7 +24,7 @@ export default async function Home() {
   const pagedata = result.pagedata;
   return <>
     <title>{pagedata.seotitle}</title>
-    <meta name="description" content="{pagedata.seodesc}" />
+    <meta name="description" content={pagedata.seodesc} />
     <link rel="canonical" href="/" />
 
     <Header headerObj={pagedata} />
