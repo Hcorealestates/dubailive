@@ -14,12 +14,17 @@ import WhatsappLink from './whatsapp-link';
 import { usePathname } from 'next/navigation';
 import { faLocationDot, faCirclePhone, faEnvelopeDot } from '@fortawesome/pro-solid-svg-icons';
 import { faClockEight, faEnvelope, faPhone } from '@fortawesome/pro-regular-svg-icons';
+// import { animateScroll as scroll } from 'react-scroll';
 
 export default function Footer({ footerProject = false, footerComm = false, pageData = false, staticInfo = false, whatsappMessage = 'Dubai Housing', prop = false }) {
   const [showAction, setShowAction] = useState(false);
   const pathname = usePathname();
   const isProjectDirectory = pathname.startsWith('/project/');
   const year = new Date().getFullYear();
+
+  const scrollToTop = () => {
+    scroll.scrollToTop();
+  };
 
   useEffect(() => {
     function scrollHandler() {
@@ -172,6 +177,7 @@ export default function Footer({ footerProject = false, footerComm = false, page
       </Modal>
     </div>}
 
+    {/* <a onClick={scrollToTop} className='fixed right-10 bottom-16'>To the top!</a> */}
   </>
 }
 

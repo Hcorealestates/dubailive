@@ -4,9 +4,7 @@ import { Navigation } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 
-export default function ShortClips( { InstVides }) {
-
-  console.log(InstVides);
+export default function ShortClips({ InstVides }) {
   return <>
     <Swiper
       slidesPerView={1}

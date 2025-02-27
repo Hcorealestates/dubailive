@@ -39,10 +39,10 @@ export default function Header({ headerObj = false }) {
             <div className="flex shrink-0 items-center">
               <Link href="/">
                 <Image
-                  alt="Your Company"
+                  alt="Dubai Housing"
                   src="/images/logo.svg"
                   width={150} height={50}
-                  className="h-12"
+                  className="h-12 w-auto"
                   priority
                 />
               </Link>

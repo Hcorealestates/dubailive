@@ -141,6 +141,9 @@ body {
   & a {
     @apply text-blue-600 underline hover:no-underline;
   }
+  & a strong{
+    @apply text-blue-600
+  }
 
   & h2 {
     @apply text-primary mb-4 text-2xl;

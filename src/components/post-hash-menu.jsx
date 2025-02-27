@@ -15,7 +15,7 @@ export default function PostHashMenu({ navLink }) {
       to={navItem.hashUrl}
       spy={true}
       smooth={true}
-      offset={0}
+      offset={-50}
       duration={10}
       href={`#${navItem.hashUrl}`} title={`${navItem.shortdesc}`} className="p-3">{navItem.shortdesc}</Link>)}
   </>

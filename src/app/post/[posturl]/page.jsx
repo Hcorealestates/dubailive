@@ -8,11 +8,9 @@ import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSlashForward } from "@fortawesome/pro-regular-svg-icons";
 import SideProjectAds from "@/components/side-project-ads";
-import { adsSlides, blogData } from "../../../../data/data";
 import ProgressBar from "@/components/progress-bar";
 import { faFacebook, faInstagram, faInstagramSquare, faLinkedin, faTelegram, faWhatsapp, faXTwitter, faYoutube } from "@fortawesome/free-brands-svg-icons";
 import ShortClips from "@/components/short-clips";
-import { tableContentData } from "../../../../data/data";
 import PostHashMenu from "@/components/post-hash-menu";
 import PostItem from "@/components/post-item";
 import BlogAuthor from "@/components/blog-author";
@@ -158,7 +156,7 @@ export default async function PostSingle({ params }) {
           </div>
 
           {/* Article Section */}
-          {blogRes.singlepostdesc.map(articleItem => <article key={articleItem.id} id={articleItem.hashUrl} className="pt-16 text-editor">
+          {blogRes.singlepostdesc.map(articleItem => <article key={articleItem.id} id={articleItem.hashUrl} className="pt-10 text-editor">
             <h2>{articleItem.shortdesc}</h2>
             {articleItem.headingBanner && <figure className="mb-4">
               <Image src={articleItem.headingBanner} alt={articleItem.shortdesc} title={articleItem.shortdesc} className="w-full md:h-96 rounded-lg" width={700} height={400} />
@@ -196,7 +194,7 @@ export default async function PostSingle({ params }) {
         </div>
         <div className="md:col-span-3">
           <div className="sticky top-20">
-            <SideProjectAds slideObj={adsSlides} />
+            <SideProjectAds slideObj={blogRes.commonads} />
           </div>
         </div>
       </section>

@@ -30,7 +30,7 @@ export default async function Home() {
     <Header headerObj={pagedata} />
     {/* Video Section */}
     <section className="relative">
-      <video width="320" height="240" controls={false} loop muted autoPlay className="w-full h-[60vh] md:min-h-[600px] object-cover object-center">
+      <video width="320" height="240" controls={false} loop muted autoPlay className="w-screen h-130 md:h-150 object-cover object-center">
         <source src={pagedata.video} type="video/mp4" />
       </video>
       <BannerGradient>
