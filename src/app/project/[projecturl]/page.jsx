@@ -22,21 +22,6 @@ import NoWhatComponent from "@/components/no-what-component";
 import TailwindAccordion from "@/components/tailwind-accordion";
 import Four04ReadOnly from '@/components/four04-read-only';
 
-async function getProjectDetails(projectid) {
-  const formData = new URLSearchParams();
-  formData.append('propurl', projectid);
-  formData.append('token1', process.env.token1);
-  formData.append('token2', process.env.token2);
-  const finalresult = await fetch(process.env.API_URL + 'properties/promotionpage/', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/x-www-form-urlencoded',
-    },
-    body: formData,
-  });
-  return finalresult.json();
-}
-
 export default async function ProjectPage({ params }) {
   const formData = new URLSearchParams();
   formData.append('token1', process.env.token1);
@@ -324,4 +309,19 @@ export default async function ProjectPage({ params }) {
     <NoWhatComponent whatContent={prop.not_what} whatImage={prop.FooterImage} whatUrl={prop.projectsurl} buttonText="View All Properties" />
     <Footer footerProject={result.footerproject} footerComm={result.footercomm} pageData={pagedata} staticInfo={result.staticpagedata} prop={prop} whatsappMessage={prop.h1} />
   </>
+}
+async function getProjectDetails(projectid) {
+  const formData = new URLSearchParams();
+  formData.append('propurl', projectid);
+  formData.append('token1', process.env.token1);
+  formData.append('token2', process.env.token2);
+  const finalresult = await fetch(process.env.API_URL + 'properties/promotionpage/', {
+    next: { revalidate: 60 },
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded',
+    },
+    body: formData,
+  });
+  return finalresult.json();
 }

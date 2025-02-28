@@ -25,7 +25,7 @@ export default async function Home() {
   return <>
     <title>{pagedata.seotitle}</title>
     <meta name="description" content={pagedata.seodesc} />
-    <link rel="canonical" href="/" />
+    <link rel="canonical" href={pagedata.homeurl} />
 
     <Header headerObj={pagedata} />
     {/* Video Section */}
