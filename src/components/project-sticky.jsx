@@ -31,7 +31,7 @@ export default function ProjectSticky({ prop }) {
       {/* Sticky items */}
       <div className="self-center py-1.5">
         {/* Project Name */}
-        <h4 className={`mb-1 md:text-[1.4rem] line-clamp-1 ${prop.propname.length >= 25 ? 'text-xl' : 'text-2xl'}`}>{prop.propname}</h4>
+        <div className={`mb-1 md:text-[1.4rem] line-clamp-1 ${prop.propname.length >= 25 ? 'text-xl' : 'text-2xl'}`}>{prop.propname}</div>
         {/* Property Details */}
         <div className="flex gap-3 text-sm">
           {prop.propbed && <div><FontAwesomeIcon icon={faBedFront} className="text-[11px]" /> {prop.propbed}  <span>BR</span></div>}

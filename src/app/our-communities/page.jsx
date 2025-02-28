@@ -23,7 +23,7 @@ export default async function OurCommunities() {
     <meta name="description" content={pagedata.commseodesc} />
     <link rel="canonical" href={pagedata.communitiesurl} />
     <section className="relative">
-      <Image src={pagedata.commbanner} priority width={1000} height={650} alt={pagedata.community_h1} className="w-screen h-72 sm:h-[350px] md:h-[500px] object-cover object-center" />
+      <Image src={pagedata.commbanner} priority width={1000} height={650} alt={result.staticpagedata.community_h1} className="w-screen h-72 sm:h-[350px] md:h-[500px] object-cover object-center" />
       <BannerGradient>
         <h1 className="text-3xl md:text-5xl mb-8 text-center text-white">{result.staticpagedata.community_h1}</h1>
         <CommonSearch parentClass="-mb-7 max-w-3xl mx-6" />

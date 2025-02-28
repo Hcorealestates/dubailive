@@ -12,19 +12,26 @@ import { faFacebook, faInstagram, faLinkedin, faWhatsapp, faXTwitter, faYoutube 
 import Modal from './Modal';
 import WhatsappLink from './whatsapp-link';
 import { usePathname } from 'next/navigation';
-import { faLocationDot, faCirclePhone, faEnvelopeDot } from '@fortawesome/pro-solid-svg-icons';
+import { faLocationDot, faCirclePhone, faEnvelopeDot, faChevronUp } from '@fortawesome/pro-solid-svg-icons';
 import { faClockEight, faEnvelope, faPhone } from '@fortawesome/pro-regular-svg-icons';
-// import { animateScroll as scroll } from 'react-scroll';
+import { animateScroll as scroll } from 'react-scroll';
 
 export default function Footer({ footerProject = false, footerComm = false, pageData = false, staticInfo = false, whatsappMessage = 'Dubai Housing', prop = false }) {
   const [showAction, setShowAction] = useState(false);
+  const [scrollCustom, setScrollCustom] = useState(false);
   const pathname = usePathname();
   const isProjectDirectory = pathname.startsWith('/project/');
   const year = new Date().getFullYear();
 
   const scrollToTop = () => {
-    scroll.scrollToTop();
+    scroll.scrollToTop({
+      duration: 200,
+      delay: 0,
+      smooth: 'linear',
+    });
   };
+
+
 
   useEffect(() => {
     function scrollHandler() {
@@ -34,9 +41,20 @@ export default function Footer({ footerProject = false, footerComm = false, page
         setShowAction(false)
       }
     };
+
+    function scrollToTopHandler() {
+      if (window.scrollY > 600) {
+        setScrollCustom(true)
+      } else {
+        setScrollCustom(false)
+      }
+    }
+
+    window.addEventListener('scroll', scrollToTopHandler);
     window.addEventListener('scroll', scrollHandler);
     return () => {
       window.removeEventListener('scroll', scrollHandler);
+      window.removeEventListener('scroll', scrollToTopHandler);
     }
   }, [])
 
@@ -176,8 +194,7 @@ export default function Footer({ footerProject = false, footerComm = false, page
         <small className='block'>Enquiry</small>
       </Modal>
     </div>}
-
-    {/* <a onClick={scrollToTop} className='fixed right-10 bottom-16'>To the top!</a> */}
+    {scrollCustom && <a onClick={scrollToTop} className='fixed right-4 bottom-18 flex justify-center items-center bg-primary-600 hover:bg-primary-700 z-20 w-10 h-10 rounded-full cursor-pointer'><FontAwesomeIcon className='text-2xl text-white' icon={faChevronUp} /> <span className=' sr-only'>To the top!</span></a>}
   </>
 }
 

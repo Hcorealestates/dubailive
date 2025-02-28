@@ -48,7 +48,7 @@ export default function FloorPlan({ floorPlanObj, projectName }) {
                       <Image src={unit.floorImage} width={900} height={150} alt={unit.floorName} className="h-60 sm:h-96 lg:h-[550px] w-full p-4 object-cover object-top" />
                     </Link>
                     <figcaption className="sm:order-first flex flex-col sm:min-w-80 justify-center p-6 border bg-white">
-                      <h4 className="text-xl mb-4 text-left">{unit.floorName}</h4>
+                      <div className="text-xl mb-4 text-left">{unit.floorName}</div>
                       {unit.balconyArea || unit.suiteArea || unit.totalArea ? <ul className="flex flex-col divide-y *:flex *:justify-between *:py-2">
                         {unit.balconyArea ? <li>Balcony Area <span>{unit.balconyArea} Sq. Ft.</span></li> : null}
                         {unit.suiteArea ? <li>Suite Area <span>{unit.suiteArea} Sq. Ft.</span></li> : null}

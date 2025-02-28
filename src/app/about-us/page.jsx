@@ -52,8 +52,8 @@ export default async function AboutUs() {
 					<div className="mx-auto max-w-6xl pt-8 md:py-30">
 						<div className="md:text-center relative before:absolute before:w-0.5 before:h-16 before:bg-primary before:block md:before:-top-1/2 md:before:left-1/2 md:before:-translate-x-1/2">
 							<small className="block text-xs md:text-sm uppercase mb-2 px-4">Welcome to Dubai Housing</small>
-							<h2 className="text-2xl md:text-4xl mb-6  px-4">Step Into The Sumptuous World Of Aristocratic Properties</h2>
-							<div className="text-xl sm:text-2xl md:text-3xl">Showcasing A Wide Array Of Real Estate Creations That Are Further Segregated Into Exquisite Niches, Namely Mansions, Townhouses, Penthouses, Villas, Duplexes, Apartments, And Studios Along With Offering Personalized Guidance To Our Interested Clients Is Our Forte. This Results In Making Our Clients, A Part Of Lucrative Investment Opportunities. As Investors Analyse Grand Options, With Regard To Exploring Exotic Skylines Of Downtown Dubai, Waterfront As Well As Beachstyle Living, And Many Other Exquisite Styles, All Crafted With Cutting-Edge Technology And Filled With Magnificent Amenities And Services.
+							<h2 className="text-2xl md:text-4xl mb-6  px-4 max-w-3xl md:mx-auto">Step Into The Sumptuous World Of Aristocratic Properties</h2>
+							<div className="text-xl">Showcasing A Wide Array Of Real Estate Creations That Are Further Segregated Into Exquisite Niches, Namely Mansions, Townhouses, Penthouses, Villas, Duplexes, Apartments, And Studios Along With Offering Personalized Guidance To Our Interested Clients Is Our Forte. This Results In Making Our Clients, A Part Of Lucrative Investment Opportunities. As Investors Analyse Grand Options, With Regard To Exploring Exotic Skylines Of Downtown Dubai, Waterfront As Well As Beachstyle Living, And Many Other Exquisite Styles, All Crafted With Cutting-Edge Technology And Filled With Magnificent Amenities And Services.
 							</div>
 						</div>
 					</div>
@@ -68,7 +68,7 @@ export default async function AboutUs() {
 							</div>
 						</div>
 						<div className="col-span-1 lg:col-span-3 feature">
-							<h3 className="text-4xl mb-6"><small className="block text-sm uppercase">Our Heritage of</small> Dubai Housing</h3>
+							<h3 className="text-4xl mb-6"><small className="block text-sm uppercase">Our Heritage</small> Dubai Housing</h3>
 							<TextComponent itemObj={aboutData.overview} className="text-editor lg:text-lg space-y-6" />
 
 							{/* <ul className="pt-4 flex flex-col *:text-base">
@@ -144,10 +144,10 @@ export default async function AboutUs() {
 					</div>
 					<Image src="/images/arrow.png" width={93} height={72} className="mx-auto inline-block mt-3" alt="Arrow" />
 
-					<div className="mt-8 grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 md:gap-6">
+					<div className="mt-8 grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 md:gap-12">
 						{/* Member */}
-						{resultAbout.team.map((team, i) => <figure key={i} className="bg-primary/10 pt-8 rounded-t-xl">
-							<Image src={team.image} width={210} height={210} className="mx-auto" alt={team.name} />
+						{resultAbout.team.map((team, i) => <figure key={i} className="bg-primary/10 pt-8 rounded-t-xl mb-10">
+							<Image src={team.image} width={210} quality={100} height={210} className="mx-auto" alt={team.name} />
 							<figcaption className="bg-white p-2 space-y-1">
 								<div className="font-serif text-xl">{team.name}</div>
 								<div className="text-gray-700">{team.description}</div>
@@ -168,7 +168,7 @@ export default async function AboutUs() {
 						</div>
 						<div className="grid md:grid-cols-4 gap-8">
 							{resultAbout.award.map((item, i) => <figure key={i} className="border border-primary-700/30 bg-white rounded-lg p-6 pb-0">
-								<Image src={item.image} width={94} height={163} className="mx-auto" alt={item.name} />
+								<Image src={item.image} width={150} quality={100} height={150} className="mx-auto" alt={item.name} />
 								<figcaption className="p-4">{item.name}</figcaption>
 							</figure>)}
 						</div>

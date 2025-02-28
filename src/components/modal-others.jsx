@@ -15,7 +15,7 @@ export default function ModalOthers({ children, className = '', btnText }) {
     <Dialog open={open} onClose={setOpen} className="relative z-50">
       <DialogBackdrop
         transition={true}
-        className="fixed inset-0 bg-gray-700 bg-opacity-85 transition-opacity data-closed:opacity-0 data-enter:duration-300 data-leave:duration-200 data-enter:ease-out data-leave:ease-in"
+        className="fixed inset-0 bg-gray-700/90 transition-opacity data-closed:opacity-0 data-enter:duration-300 data-leave:duration-200 data-enter:ease-out data-leave:ease-in"
       />
       {/* Modal body */}
       <div className="fixed inset-0 z-50 w-screen overflow-y-auto">

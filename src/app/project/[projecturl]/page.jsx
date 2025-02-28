@@ -64,7 +64,7 @@ export default async function ProjectPage({ params }) {
       {/* Project Information */}
       <div className="left-0 top-0 absolute w-full min-h-full z-10 flex flex-col justify-center items-center bg-white/[.85] px-6 text-center">
         <Image src={prop.logo} priority width={300} height={90} className="max-h-16 w-auto md:max-h-24 max-w-40" alt={prop.logoalt} />
-        <h1 className="text-3xl md:text-5xl max-w-2xl mx-auto mt-3"><TextComponent className=" " itemObj={prop.h1} /></h1>
+        <h1 className="text-3xl md:text-5xl max-w-2xl mx-auto mt-3"><TextComponent itemObj={prop.h1} /></h1>
         {prop.proprice && <div className="py-6 text-sm">Price (AED)<span className="block text-3xl border-b border-primary/[.5] font-bold">{prop.proprice}  {prop.proprice !== 'On Request' && <span>M<sup>&#42;</sup></span>}</span></div>}
         <ul className="flex flex-wrap justify-center divide-x divide-primary/[.4] *:px-3 text-xl my-4">
           {prop.propbed && <li>{prop.propbed} <span>BR</span></li>}
@@ -104,7 +104,7 @@ export default async function ProjectPage({ params }) {
             {prop.highlightimage && <Image src={prop.highlightimage} width={450} height={600} className="w-full object-cover object-center md:min-h-full" alt={prop.highlightalt} />}
             <figcaption className="absolute inset-0 z-10 bg-linear-to-t from-black to-black/[.5] flex items-end p-12">
               <span className="absolute top-4 left-4 w-[calc(100%-33px)] h-[calc(100%-33px)] border border-white/[.4] rounded-xl z-[-2]"></span>
-              <h2 className="text-white text-2xl md:text-4xl"><small className="block text-sm font-sans font-normal">Key Highlights of </small>{prop.propname}</h2>
+              <div className="text-white text-2xl md:text-4xl font-serif"><small className="block text-sm font-sans font-normal">Key Highlights of </small>{prop.propname}</div>
             </figcaption>
           </figure>
 
@@ -153,33 +153,36 @@ export default async function ProjectPage({ params }) {
         </div>
       }
     </section>
-
-    {/* eBrochure Section */}
-    <section className="relative">
-      {/* {prop.ebroucherimagemobile && <Image src={prop.ebroucherimagemobile} width={640} height={650} className="block md:hidden w-full" alt={prop.ebroucheralt} />} */}
-      {prop.ebroucherimage && <Image src={prop.ebroucherimage} width={640} height={650} className="hidden md:block w-full" alt={prop.ebroucheralt} />}
-      <div className="lg:absolute bg-white/[.85] min-h-full lg:w-1/2 lg:top-0 lg:left-0 xl:p-16 flex flex-col justify-center p-6">
-        {prop.ebrohead && <h2 className="text-2xl md:text-4xl">{prop.ebrohead}</h2>}
-        <TextComponent className="mb-6 ebrochure" itemObj={prop.ebrodesc} />
-        <Modal className="self-start px-6 rounded-full" projectName={prop.h1}><FontAwesomeIcon icon={faDownload} /> eBrochure</Modal>
+    {/* grid control */}
+    <section className='grid border'>
+      {/* Overview Section */}
+      <div className="bg-gray-50 py-16 order-1">
+        <div className="wrapper max-w-5xl">
+          <small className="text-base text-gray-500">Overview</small>
+          {prop.h2 && <h2 className="text-2xl lg:text-4xl">{prop.h2}</h2>}
+          {prop.overhead && <span className="font-semibold block my-3 text-primary md:text-xl">{prop.overhead}</span>}
+          <Overview overviewshortObj={prop.overshortdesc} overviewDesc={prop.overdesc} />
+        </div>
       </div>
-    </section>
 
-    {/* Overview Section */}
-    <section className="bg-gray-50 py-16">
-      <div className="wrapper max-w-5xl">
-        <small className="text-base text-gray-500">Overview</small>
-        {prop.h2 && <h3 className="text-2xl lg:text-4xl">{prop.h2}</h3>}
-        {prop.overhead && <span className="font-semibold block my-3 text-primary md:text-xl">{prop.overhead}</span>}
-        <Overview overviewshortObj={prop.overshortdesc} overviewDesc={prop.overdesc} />
+      {/* eBrochure Section */}
+      <div className="relative">
+        {/* {prop.ebroucherimagemobile && <Image src={prop.ebroucherimagemobile} width={640} height={650} className="block md:hidden w-full" alt={prop.ebroucheralt} />} */}
+        {prop.ebroucherimage && <Image src={prop.ebroucherimage} width={640} height={650} quality={100} className="hidden md:block w-full" alt={prop.ebroucheralt} />}
+        <div className="lg:absolute bg-white/[.85] min-h-full lg:w-1/2 lg:top-0 lg:left-0 xl:p-16 flex flex-col justify-center p-6">
+          {prop.ebrohead && <h2 className="text-2xl md:text-4xl">{prop.ebrohead}</h2>}
+          <TextComponent className="mb-6 ebrochure" itemObj={prop.ebrodesc} />
+          <Modal className="self-start px-6 rounded-full" projectName={prop.h1}><FontAwesomeIcon icon={faDownload} /> eBrochure</Modal>
+        </div>
       </div>
     </section>
 
     {/* Payment Plan */}
     {prop.pplandesc && <section className="wrapper max-w-5xl py-12 md:py-28">
       <div className="lg:text-center">
-        <small className="text-base text-gray-500">Payment Plan of</small>
-        {prop.pplanhead && <div className="text-2xl lg:text-4xl mb-6 font-serif">{prop.pplanhead}</div>}
+        {prop.pplanhead && <h3 className="text-2xl lg:text-4xl mb-6 font-serif">
+          <small className="text-base text-gray-500 block">Payment Plan of </small>
+          {prop.pplanhead}</h3>}
       </div>
       <TextComponent itemObj={prop.pplandesc} className="payment flex flex-wrap gap-6 *:grow relative *:bg-primary/[.1] *:p-6 *:border-b-2 *:border-primary/[.6] *:text-5xl/8" />
     </section>}
@@ -189,7 +192,7 @@ export default async function ProjectPage({ params }) {
     <section className="bg-gray-50 py-12 md:py-28 lg:text-center">
       <div className="wrapper max-w-5xl">
         <small className="text-base text-gray-500">Amenities of</small>
-        {prop.amenityhead && <h3 className="text-2xl lg:text-4xl">{prop.amenityhead}</h3>}
+        {prop.amenityhead && <h3 className="text-2xl lg:text-4xl mb-4">{prop.amenityhead}</h3>}
         {prop.amenitydesc && <TextComponent itemObj={prop.amenitydesc} className='mb-5' />}
         <div className="grid sm:grid-cols-4 sm:grid-flow-row grid-flow-col overflow-auto gap-5 mt-4 pb-2">
           {resultProp.amenities.splice(0, 4).map((amenity, index) =>
@@ -218,8 +221,9 @@ export default async function ProjectPage({ params }) {
     {/* Location Section */}
     <section className="wrapper  py-12 md:py-28">
       <div className="lg:text-center mb-8 mx-auto max-w-5xl">
-        <small className="text-base text-gray-500">Location of</small>
-        {prop.locationhead && <div className="text-2xl lg:text-4xl mb-6 font-serif">{prop.locationhead}</div>}
+        {prop.locationhead && <h4 className="text-2xl lg:text-4xl mb-6 font-serif">
+          <small className="text-base text-gray-500 block">Location of </small>
+          {prop.locationhead}</h4>}
         {prop.locationdesc && <TextComponent itemObj={prop.locationdesc} />}
       </div>
       <ul className="grid gap-5 sm:grid-flow-row sm:grid-cols-2 md:grid-cols-4 grid-flow-col max-sm:overflow-auto pb-2">
@@ -232,11 +236,15 @@ export default async function ProjectPage({ params }) {
       </ul>
     </section>
 
+    <section className='grid'>
+
+    </section>
+
     {/* Floor Plan Section */}
     {floorPlanData.length > 0 && <><div className="bg-gray-100 py-16">
       <div className="lg:text-center wrapper max-w-4xl pb-40">
-        <small className="text-base text-gray-500">Floor Plans of</small>
-        {prop.floorhead && <div className="text-2xl lg:text-4xl mb-6 font-serif">{prop.floorhead}</div>}
+        {prop.floorhead && <h4 className="text-2xl lg:text-4xl mb-6 font-serif"><small className="text-base text-gray-500 block">Floor Plans of </small>
+          {prop.floorhead}</h4>}
         {prop.floordesc && <TextComponent itemObj={prop.floordesc} />}
       </div>
     </div>
@@ -247,15 +255,15 @@ export default async function ProjectPage({ params }) {
 
 
     {/* Gallery Section */}
-    {resultProp.gallery.length > 0 && <section className="flex flex-col lg:flex-row gap-6 p-6">
+    {resultProp.gallery.length > 0 && <div className="flex flex-col lg:flex-row gap-6 p-6">
       <div className="lg:w-1/2 border lg:h-[calc(100vh-6rem)] relative lg:sticky lg:top-20 bg-white overflow-hidden">
-        <Image src="/images/gallery-bg.svg" width={1000} height={800} alt='' className="lg:min-h-screen min-w-full object-cover" />
+        <Image src="/images/gallery-bg.svg" width={1000} height={800} alt={`Gallery images of ${prop.propname}`} className="lg:min-h-screen min-w-full object-cover" />
         <div className=" absolute inset-0 w-full min-h-full flex justify-center items-center">
-          <h2 className="text-2xl lg:text-4xl bg-white p-4"><small className="block font-sans font-normal text-base">Gallery images of </small>{prop.propname}</h2>
+          <h4 className="text-2xl lg:text-4xl bg-white p-4"><small className="block font-sans font-normal text-base">Gallery images of </small>{prop.propname}</h4>
         </div>
       </div>
       <GalleryImage galleryObj={resultProp.gallery} />
-    </section>}
+    </div>}
 
     {/* FAQ Section */}
     {resultProp.faq.length > 0 &&
