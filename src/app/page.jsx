@@ -30,7 +30,7 @@ export default async function Home() {
     <Header headerObj={pagedata} />
     {/* Video Section */}
     <section className="relative">
-      <Image src="/images/dubai-housing.webp" priority width={430} height={500} alt={pagedata.h1} className="sm:hidden w-full h-100 object-cover object-center" />
+      <Image src={pagedata.mobbabberimage} priority width={430} height={500} alt={pagedata.h1} className="sm:hidden w-full h-100 object-cover object-center" />
       <video width="320" height="240" preload="none" controls={false} loop muted autoPlay className="hidden sm:block h-120 md:h-140 w-full object-cover object-center">
         <source src={pagedata.video} type="video/mp4" />
       </video>
