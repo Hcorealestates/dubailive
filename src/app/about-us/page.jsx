@@ -68,7 +68,7 @@ export default async function AboutUs() {
 							</div>
 						</div>
 						<div className="col-span-1 lg:col-span-3 feature">
-							<h3 className="text-4xl mb-6"><small className="block text-sm uppercase">Our Heritage</small> Dubai Housing</h3>
+						<h3 className="text-4xl mb-6"><small className="block text-sm uppercase">Our Heritage</small> Dubai Housing</h3>
 							<TextComponent itemObj={aboutData.overview} className="text-editor lg:text-lg space-y-6" />
 
 							{/* <ul className="pt-4 flex flex-col *:text-base">
