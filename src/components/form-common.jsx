@@ -79,7 +79,7 @@ export default function FormCommon({ projectName }) {
       </select>
       <input type="tel" value={mobileNo} onChange={e => setMobileNo(e.target.value)} className="outline-hidden block w-full rounded-md border-0 p-3 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary-600 sm:text-sm sm:leading-6" placeholder="Enter Mobile Number" />
 
-      <button  disabled={isSubmitting} className="btn btn-primary">{isSubmitting ? "Submitting..." : "Submit"}</button>
+      <button disabled={isSubmitting} className="btn btn-primary">{isSubmitting ? "Submitting..." : "Submit"}</button>
     </form>
   </>
 }
