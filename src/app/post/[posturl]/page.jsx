@@ -99,7 +99,8 @@ export default async function PostSingle({ params }) {
           <BlogAuthor author={{
             authorimage: blogData.authorimage,
             authorname: blogData.authorname,
-            authorposition: 'Creative Content Writer'
+            authorposition: blogData.authorposition,
+            authdescription: blogData.authdescription
           }} />
         </div>
       </section>

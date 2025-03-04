@@ -1,6 +1,19 @@
 export default {
   reactStrictMode: true,
   swcMinify: true,
+  async headers() {
+    return [
+      {
+        source: "/(.*)",
+        headers: [
+          {
+            key: "X-Frame-Options",
+            value: "SAMEORIGIN",
+          },
+        ],
+      },
+    ];
+  },
   images: {
       remotePatterns: [
          {

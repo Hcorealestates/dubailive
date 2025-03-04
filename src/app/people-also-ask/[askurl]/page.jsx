@@ -82,9 +82,10 @@ export default async function AskSingle({ params }) {
         </div>
         <div className="flex justify-center mt-10">
           <BlogAuthor author={{
-            authorimage: askData.authorimage,
-            authorname: askData.authorname,
-            designation: 'Super Creator'
+            authorimage: blogData.authorimage,
+            authorname: blogData.authorname,
+            authorposition: blogData.authorposition,
+            authdescription: blogData.authdescription
           }} />
         </div>
       </section>
