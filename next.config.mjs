@@ -24,7 +24,7 @@ export default {
         permanent: true,
       },
       {
-        source: '/builder/sobha-properties/',
+        source: '/builder/sobha-properties',
         destination: '/developers/sobha-realty',
         permanent: true,
       },

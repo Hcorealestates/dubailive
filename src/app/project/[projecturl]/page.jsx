@@ -29,6 +29,7 @@ export default async function ProjectPage({ params }) {
   formData.append('type', 'project');
   formData.append('url', params.projecturl);
   const redirectUrl = await fetch(process.env.API_URL + 'users/redirection/', {
+    next: { revalidate: 60 },
     method: 'POST',
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded',
