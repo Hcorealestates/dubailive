@@ -9,7 +9,7 @@ export default function PostItem({ postItem }) {
       <div className="relative">
         <Image src={postItem.listingimage} width={408} height={462} className="w-full xl:max-w-100 rounded-2xl object-cover object-left-top transition-all group-hover:-translate-y-3 h-80" alt={postItem.name} />
         <div className="absolute bottom-2 left-5 z-20 flex pl-1 overflow-hidden group-hover:-translate-y-3 transition-all py-1 max-w-16">
-          <BlogAuthor author={postItem} />
+          <BlogAuthor className="size-15" author={postItem} />
         </div>
       </div>
       <figcaption className="py-3 px-4">
