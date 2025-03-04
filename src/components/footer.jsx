@@ -149,15 +149,14 @@ export default function Footer({ footerProject = false, footerComm = false, page
           <div className="flex flex-col grow md:pl-6 md:border-l">
             <div className="text-2xl h2">Follow Us</div>
             <div className="flex gap-3 my-3 text-3xl">
-              <Link href={staticInfo.facebook_link} className="hover:scale-125 transition-transform text-facebook"><FontAwesomeIcon icon={faFacebook} /></Link>
+              <Link href={staticInfo.facebook_link} className="hover:scale-125 transition-transform text-facebook"><FontAwesomeIcon icon={faFacebook} /> <span className='sr-only'>Follow us on Facebook</span></Link>
+              <Link href={staticInfo.linked_link} className="hover:scale-125 transition-transform text-linkedin"><FontAwesomeIcon icon={faLinkedin} /><span className='sr-only'>Follow us on Linkedin</span></Link>
 
-              <Link href={staticInfo.linked_link} className="hover:scale-125 transition-transform text-linkedin"><FontAwesomeIcon icon={faLinkedin} /></Link>
+              <Link href={staticInfo.twitter} className="hover:scale-125 transition-transform text-black"><FontAwesomeIcon icon={faXTwitter} /><span className='sr-only'>Follow us on Twitter</span></Link>
 
-              <Link href={staticInfo.twitter} className="hover:scale-125 transition-transform text-black"><FontAwesomeIcon icon={faXTwitter} /></Link>
+              <Link href={staticInfo.youtube} className="hover:scale-125 transition-transform text-red-600"><FontAwesomeIcon icon={faYoutube} /><span className='sr-only'>Follow us on Youtube</span></Link>
 
-              <Link href={staticInfo.youtube} className="hover:scale-125 transition-transform text-red-600"><FontAwesomeIcon icon={faYoutube} /></Link>
-
-              <Link href={staticInfo.insta} className="hover:scale-125 transition-transform text-instagram"><FontAwesomeIcon icon={faInstagram} /></Link>
+              <Link href={staticInfo.insta} className="hover:scale-125 transition-transform text-instagram"><FontAwesomeIcon icon={faInstagram} /><span className='sr-only'>Follow us on Instagram</span></Link>
             </div>
           </div>
         </div>

@@ -82,10 +82,10 @@ export default async function AskSingle({ params }) {
         </div>
         <div className="flex justify-center mt-10">
           <BlogAuthor author={{
-            authorimage: blogData.authorimage,
-            authorname: blogData.authorname,
-            authorposition: blogData.authorposition,
-            authdescription: blogData.authdescription
+            authorimage: askData.authorimage,
+            authorname: askData.authorname,
+            authorposition: askData.authorposition,
+            authdescription: askData.authdescription
           }} />
         </div>
       </section>
@@ -96,13 +96,13 @@ export default async function AskSingle({ params }) {
           {/* Instagram Section */}
           <div className="shadow-lg border border-black/10 rounded-lg">
             <div className="flex justify-between items-center px-2 py-2">
-              <div className="flex gap-x-3">
-                <div className="border border-[var(--instagram)] size-12 rounded-full flex justify-center items-center">
+              <div className="flex gap-x-3 relative">
+                <div className="border border-instagram size-12 rounded-full flex justify-center items-center">
                   <Image
                     alt="Dubai Housing"
                     src="/images/logo.svg"
                     width={60} height={60}
-                    className=""
+                    className="Dubai Housing"
                   />
                 </div>
                 <div className="self-center">
@@ -110,7 +110,7 @@ export default async function AskSingle({ params }) {
                   <div className="text-xs">Real Estate</div>
                 </div>
               </div>
-              <Link href="" target="_blank" className="text-[var(--instagram)] text-4xl"><FontAwesomeIcon icon={faInstagram} className="" /></Link>
+              <a href="https://www.instagram.com/dubaihousingae/" rel="noopener noreferrer" target="_blank" className="text-instagram text-4xl before:absolute before:inset-0"><FontAwesomeIcon icon={faInstagram} /></a>
             </div>
             {/* Instagram Videos */}
             <ShortClips InstVides={askRes.InstaVideo} />

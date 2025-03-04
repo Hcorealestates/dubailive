@@ -5,8 +5,8 @@ import { faRulerCombined, faSlashForward } from "@fortawesome/pro-light-svg-icon
 import { faColumns3, faDownload, faKey, faMoneyFromBracket } from "@fortawesome/pro-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { all } from '@awesome.me/kit-d4fc302733/icons';
-library.add(...all)
+import { fas, far } from '@awesome.me/kit-d4fc302733/icons';
+library.add(fas, far);
 import Image from 'next/image'
 import Link from "next/link";
 import Modal from "@/components/Modal";
@@ -60,8 +60,8 @@ export default async function ProjectPage({ params }) {
     <meta name="description" content={prop.seodesc} />
     <link rel="canonical" href={prop.canonical} />
     <section className="relative">
-      <Image src={prop.mobilebannerimage} width={639} height={650} alt={prop.mainbanneralt} className="block sm:hidden object-cover object-center max-h-[600px]" priority />
-      <Image src={prop.mainbannerimage} width={1600} height={750} alt={prop.mainbanneralt} className="hidden sm:block w-full max-lg:min-h-150" />
+      <Image src={prop.mobilebannerimage} width={639} height={650} alt={prop.mainbanneralt} className="block sm:hidden object-cover object-center h-135" priority />
+      <Image src={prop.mainbannerimage} width={1600} height={750} alt={prop.mainbanneralt} className="hidden sm:block w-full sm:h-160 lg:h-165" />
       {/* Project Information */}
       <div className="left-0 top-0 absolute w-full min-h-full z-10 flex flex-col justify-center items-center bg-white/[.85] px-6 text-center">
         <Image src={prop.logo} priority width={300} height={90} className="max-h-16 w-auto md:max-h-24 max-w-40" alt={prop.logoalt} />
@@ -154,8 +154,8 @@ export default async function ProjectPage({ params }) {
         </div>
       }
     </section>
-    {/* grid control */}
-    <section className='grid border'>
+    {/* flex control */}
+    <section className='flex flex-col'>
       {/* Overview Section */}
       <div className="bg-gray-50 py-16 order-1">
         <div className="wrapper max-w-5xl">
