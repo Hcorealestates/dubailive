@@ -66,7 +66,7 @@ export default async function ProjectPage({ params }) {
       <div className="left-0 top-0 absolute w-full min-h-full z-10 flex flex-col justify-center items-center bg-white/[.85] px-6 text-center">
         <Image src={prop.logo} priority width={300} height={90} className="max-h-16 w-auto md:max-h-24 max-w-40" alt={prop.logoalt} />
         <h1 className="text-3xl md:text-5xl max-w-2xl mx-auto mt-3"><TextComponent itemObj={prop.h1} /></h1>
-        {prop.proprice && <div className="py-6 text-sm">Price (AED)<span className="block text-3xl border-b border-primary/[.5] font-bold">{prop.proprice}  {prop.proprice !== 'On Request' && <span>M*<sup>&#42;</sup></span>}</span></div>}
+        {prop.proprice && <div className="py-6 text-sm">Price (AED)<span className="block text-3xl border-b border-primary/[.5] font-bold">{prop.proprice}  {prop.proprice !== 'On Request' && <span>M<sup>&#42;</sup></span>}</span></div>}
         <ul className="flex flex-wrap justify-center divide-x divide-primary/[.4] *:px-3 text-xl my-4">
           {prop.propbed && <li>{prop.propbed} <span>BR</span></li>}
           {prop.propertytypename && <li>{prop.propertytypename}</li>}
