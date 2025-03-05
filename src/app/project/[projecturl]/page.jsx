@@ -169,7 +169,7 @@ export default async function ProjectPage({ params }) {
       {/* eBrochure Section */}
       <div className="relative">
         {/* {prop.ebroucherimagemobile && <Image src={prop.ebroucherimagemobile} width={640} height={650} className="block md:hidden w-full" alt={prop.ebroucheralt} />} */}
-        {prop.ebroucherimage && <Image src={prop.ebroucherimage} width={640} height={650} quality={100} className="hidden md:block w-full" alt={prop.ebroucheralt} />}
+        {prop.ebroucherimage && <Image src={prop.ebroucherimage} width={1700} height={700} className="hidden md:block w-full" alt={prop.ebroucheralt} />}
         <div className="lg:absolute bg-white/[.85] min-h-full lg:w-1/2 lg:top-0 lg:left-0 xl:p-16 flex flex-col justify-center p-6">
           {prop.ebrohead && <h2 className="text-2xl md:text-4xl">{prop.ebrohead}</h2>}
           <TextComponent className="mb-6 ebrochure" itemObj={prop.ebrodesc} />

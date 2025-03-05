@@ -95,8 +95,8 @@ export default async function AskSingle({ params }) {
         <div className="md:col-span-3">
           {/* Instagram Section */}
           <div className="shadow-lg border border-black/10 rounded-lg">
-            <div className="flex justify-between items-center px-2 py-2">
-              <div className="flex gap-x-3 relative">
+            <div className="flex justify-between items-center px-2 py-2 relative">
+              <div className="flex gap-x-3">
                 <div className="border border-instagram size-12 rounded-full flex justify-center items-center">
                   <Image
                     alt="Dubai Housing"
