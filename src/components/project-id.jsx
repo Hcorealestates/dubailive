@@ -24,7 +24,7 @@ export default function ProjectId({ projectId }) {
       <div className="text-2xl pt-4 pb-2 mb-4 font-bold text-primary border-b">
         <small className="block font-normal text-gray-600 text-sm">Price</small>
         {pid.proprice === 'On Request' ? `${pid.proprice}` : `AED ${pid.proprice}`}
-        {pid.proprice === 'On Request' ? "" : <span> M</span>}
+        {pid.proprice === 'On Request' ? "" : <span> M*</span>}
       </div>
 
       {/* Configuration */}

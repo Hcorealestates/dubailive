@@ -23,7 +23,7 @@ export default function CommunityComponent({ communities }) {
             <span className="sm:text-xl font-semibold">{community.size} {community.size === 'On Request' ? "" : "Sq. Ft."}</span>
           </div>
           <div className="flex justify-between  max-sm:border-t max-sm:py-2 sm:flex-col text-sm text-primary-800">Starting Price
-            <span className="sm:text-xl font-semibold">AED {community.price} {community.price === 'On Request' ? "" : "M"}</span>
+            <span className="sm:text-xl font-semibold">AED {community.price} {community.price === 'On Request' ? "" : "M*"}</span>
           </div>
           <div className="flex justify-between max-sm:border-t max-sm:py-2 sm:flex-col text-sm text-primary-800">Beds
             <span className="sm:text-xl font-semibold">{community.comm_bed} {community.comm_bed === 'On Request' ? "" : "BR"}</span>

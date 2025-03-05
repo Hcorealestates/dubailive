@@ -41,7 +41,7 @@ export default function ProjectSticky({ prop }) {
       </div>
       <div className="self-center hidden lg:block">
         <div className="text-sm min-w-16 max-md:text-right">
-          Price <small>(AED)</small> <span className={`text-primary block font-bold ${prop.proprice.toLowerCase() == 'on request' ? 'max-sm:text-xs' : 'text-xl'}`}>{prop.proprice} {prop.proprice.toLowerCase() !== 'on request' && 'M'}</span>
+          Price <small>(AED)</small> <span className={`text-primary block font-bold ${prop.proprice.toLowerCase() == 'on request' ? 'max-sm:text-xs' : 'text-xl'}`}>{prop.proprice} {prop.proprice.toLowerCase() !== 'on request' && 'M*'}</span>
         </div>
       </div>
       {/* Phone & Whatsapp */}

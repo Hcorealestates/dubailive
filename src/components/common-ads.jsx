@@ -27,7 +27,7 @@ export default function CommonAds({ projectAds }) {
             <span className="sm:text-xl font-semibold">{projectAds.offerSize} {projectAds.offerSize === 'On Request' ? "" : "Sq. Ft."}</span>
           </div>
           <div className="flex justify-between  max-sm:border-t max-sm:py-2 sm:flex-col text-sm text-primary-800">Starting Price
-            <span className="sm:text-xl font-semibold">AED {projectAds.offerPrice} {projectAds.offerPrice === 'On Request' ? "" : "M"}</span>
+            <span className="sm:text-xl font-semibold">AED {projectAds.offerPrice} {projectAds.offerPrice === 'On Request' ? "" : "M*"}</span>
           </div>
           <div className="flex justify-between max-sm:border-t max-sm:py-2 sm:flex-col text-sm text-primary-800">Beds
             <span className="sm:text-xl font-semibold">{projectAds.offerBed} {projectAds.offerBed === 'On Request' ? "" : "BR"}</span>

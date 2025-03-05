@@ -22,7 +22,7 @@ export default function DeveloperProject({ devProject, className }) {
       {devProject.proprice &&
         <div className="text-primary text-xl font-bold">
           <span className="text-gray-500 block text-xs font-normal">Prices</span>
-          AED {devProject.proprice} {devProject.proprice != 'On Request' ? 'M' : ''}
+          AED {devProject.proprice} {devProject.proprice != 'On Request' ? 'M*' : ''}
         </div>
       }
     </figcaption>

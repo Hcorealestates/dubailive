@@ -180,7 +180,7 @@ export default function Footer({ footerProject = false, footerComm = false, page
       {isProjectDirectory &&
         (prop.proprice !== 'On Request' && <div className='grow self-center pl-4'>
           <span className="block text-[11px] text-gray-500">Price (AED)</span>
-          <span className="text-2xl font-semibold">{prop.proprice} </span>M<sup>&#42;</sup></div>)}
+          <span className="text-2xl font-semibold">{prop.proprice} </span>M*<sup>&#42;</sup></div>)}
 
       <WhatsappLink className="grow text-center text-whatsapp self-center" phoneNumber={pageData.whatsnumber} message={whatsappMessage}>
         <FontAwesomeIcon className="text-2xl" icon={faWhatsapp} />

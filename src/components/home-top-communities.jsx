@@ -35,7 +35,7 @@ export default function HomeTopCommunities({ topCommunities }) {
           </div>
           <div className="text-xl md:text-3xl">
             <span className='block text-sm text-gray-300'>Starting Price</span>
-            <span className=''>AED</span> {commItem.price} <span className=''>M</span>
+            <span className=''>AED</span> {commItem.price} <span className=''>M*</span>
           </div>
           <div className="flex justify-center mb-6">
             <Link href={commItem.url} className="bg-primary hover:bg-white border-2 border-primary focus:outline-hidden text-white hover:text-primary font-semibold h-12 px-6  flex items-center justify-center rounded-lg before:absolute before:inset-0 shadow-sm shadow-primary">Discover More</Link>
