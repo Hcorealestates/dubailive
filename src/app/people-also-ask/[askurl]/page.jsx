@@ -12,11 +12,11 @@ import { adsSlides, blogData } from "../../../../data/data";
 import ProgressBar from "@/components/progress-bar";
 import { faFacebook, faInstagram, faInstagramSquare, faLinkedin, faTelegram, faWhatsapp, faXTwitter, faYoutube } from "@fortawesome/free-brands-svg-icons";
 import ShortClips from "@/components/short-clips";
-import { tableContentData } from "../../../../data/data";
 import PostHashMenu from "@/components/post-hash-menu";
 import PostItem from "@/components/post-item";
 import BlogAuthor from "@/components/blog-author";
 import TextComponent from "@/components/TextComponent";
+import ShareBtns from '@/components/share-btns';
 
 export default async function AskSingle({ params }) {
   const props = getHomeCompleteData();
@@ -37,6 +37,15 @@ export default async function AskSingle({ params }) {
       <title>{askData.seotitle}</title>
       <meta name="description" content={askData.seodesc} />
       <link rel="canonical" href={askData.url} />
+      <meta property="og:image" content="/images/logo.jpg" />
+      <meta property="og:image:alt" content="Dubai Housing" />
+      <meta property="og:image:type" content="image/jpg" />
+      <meta property="og:image:width" content="182" />
+      <meta property="og:image:height" content="80" />
+      <meta name="twitter:image" content="/images/logo.jpg" />
+      <meta name="twitter:image:type" content="image/jpg" />
+      <meta name="twitter:image:width" content="182" />
+      <meta name="twitter:image:height" content="80" />
       <ProgressBar />
       {/* Top Ads */}
       <section className="bg-primary/15 py-6 lg:py-10">
@@ -130,6 +139,14 @@ export default async function AskSingle({ params }) {
           <article id={`#${askData.hashUrl}`} className="pt-16 article -mt-10">
             {askData.fulldesc && <TextComponent className="text-editor" itemObj={askData.fulldesc} />}
           </article>
+
+          {/* Social share */}
+          <div className="my-6 py-6 border-b">
+            <div className="h2 text-2xl mb-4">Share Our People Also Ask</div>
+            <div className="flex flex-wrap gap-4 my-3 *:rounded-sm *:flex *:gap-x-3 *:items-center *:text-white! *:no-underline! *:py-2 *:px-3">
+              <ShareBtns shareUrl={blogData} />
+            </div>
+          </div>
         </div>
 
         <div className="md:col-span-3">

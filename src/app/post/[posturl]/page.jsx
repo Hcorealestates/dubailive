@@ -1,3 +1,4 @@
+
 export const revalidate = 5 * 60
 import { notFound, redirect } from 'next/navigation';
 import Footer from "@/components/footer";
@@ -9,13 +10,14 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSlashForward } from "@fortawesome/pro-regular-svg-icons";
 import SideProjectAds from "@/components/side-project-ads";
 import ProgressBar from "@/components/progress-bar";
-import { faFacebook, faInstagram, faInstagramSquare, faLinkedin, faTelegram, faWhatsapp, faXTwitter, faYoutube } from "@fortawesome/free-brands-svg-icons";
+import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 import ShortClips from "@/components/short-clips";
 import PostHashMenu from "@/components/post-hash-menu";
 import PostItem from "@/components/post-item";
 import BlogAuthor from "@/components/blog-author";
 import TextComponent from "@/components/TextComponent";
 import NotFound from "../../not-found";
+import ShareBtns from '@/components/share-btns';
 
 export default async function PostSingle({ params }) {
 
@@ -53,6 +55,15 @@ export default async function PostSingle({ params }) {
       <title>{blogData.seotitle}</title>
       <meta name="description" content={blogData.seodesc} />
       <link rel="canonical" href={blogData.url} />
+      <meta property="og:image" content="/images/logo.jpg" />
+      <meta property="og:image:alt" content="Dubai Housing" />
+      <meta property="og:image:type" content="image/jpg" />
+      <meta property="og:image:width" content="182" />
+      <meta property="og:image:height" content="80" />
+      <meta name="twitter:image" content="/images/logo.jpg" />
+      <meta name="twitter:image:type" content="image/jpg" />
+      <meta name="twitter:image:width" content="182" />
+      <meta name="twitter:image:height" content="80" />
       <ProgressBar />
       {/* Top Ads */}
       <section className="bg-primary/15 py-6 lg:py-10">
@@ -173,6 +184,14 @@ export default async function PostSingle({ params }) {
               {blogRes.CommonPost.map(single =>
                 <Link className="bg-primary/50 no-underline! text-white! hover:bg-primary block px-3 py-2 rounded-full" href={single.url} target="_blank" key={single.id}>{single.name}</Link>
               )}
+            </div>
+          </div>
+
+          {/* Social share */}
+          <div className="my-6 py-6 border-b">
+            <div className="h2 text-2xl mb-4">Share Our Post</div>
+            <div className="flex flex-wrap gap-4 my-3 *:rounded-sm *:flex *:gap-x-3 *:items-center *:text-white! *:no-underline! *:py-2 *:px-3">
+              <ShareBtns shareUrl={blogData} />
             </div>
           </div>
 
