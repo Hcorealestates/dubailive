@@ -3,19 +3,19 @@ import { FacebookShareButton, FacebookIcon, TwitterShareButton, XIcon, LinkedinS
 
 export default function ShareBtns({ shareUrl }) {
   return <>
-    <FacebookShareButton url={shareUrl.url}>
+    <FacebookShareButton url={shareUrl}>
       <FacebookIcon size={36} borderRadius={5} />
     </FacebookShareButton>
 
-    <TwitterShareButton url={shareUrl.url}>
+    <TwitterShareButton url={shareUrl}>
       <XIcon size={36} borderRadius={5} />
     </TwitterShareButton>
 
-    <LinkedinShareButton url={shareUrl.url}>
+    <LinkedinShareButton url={shareUrl}>
       <LinkedinIcon size={36} borderRadius={5} />
     </LinkedinShareButton>
 
-    <WhatsappShareButton url={shareUrl.url}>
+    <WhatsappShareButton url={shareUrl}>
       <WhatsappIcon size={36} borderRadius={5} />
     </WhatsappShareButton>
 

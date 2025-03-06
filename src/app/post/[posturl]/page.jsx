@@ -55,20 +55,30 @@ export default async function PostSingle({ params }) {
       <title>{blogData.seotitle}</title>
       <meta name="description" content={blogData.seodesc} />
       <link rel="canonical" href={blogData.url} />
-      <meta property="og:image" content="/images/logo.jpg" />
-      <meta property="og:image:alt" content="Dubai Housing" />
-      <meta property="og:image:type" content="image/jpg" />
+      {/* <meta property="og:image" content={blogData.bannerimage} />
+      <meta property="og:image:alt" content={blogData.name} />
       <meta property="og:image:width" content="182" />
       <meta property="og:image:height" content="80" />
-      <meta name="twitter:image" content="/images/logo.jpg" />
-      <meta name="twitter:image:type" content="image/jpg" />
+      <meta name="twitter:image" content={blogData.bannerimage} />
       <meta name="twitter:image:width" content="182" />
-      <meta name="twitter:image:height" content="80" />
+      <meta name="twitter:image:height" content="80" /> */}
+      <meta name="twitter:image" content={blogData.bannerimage} />
+      <meta name="twitter:site" content="Dubai Housing" />
+      <meta name="twitter:card" content={blogData.seotitle} />
+      <meta name="twitter:title" content={blogData.seotitle} />
+      <meta name="twitter:description" content={blogData.seodesc} />
+      <meta property="og:image" content={blogData.bannerimage} />
+      <meta property="og:image:alt" content={blogData.name} />
+      <meta property="og:site_name" content="Dubai Housing" />
+      <meta property="og:type" content="image/webp" />
+      <meta property="og:title" content={blogData.seotitle} />
+      <meta property="og:url" content={blogData.url} />
+      <meta property="og:description" content={blogData.seodesc} />
       <ProgressBar />
       {/* Top Ads */}
       <section className="bg-primary/15 py-6 lg:py-10">
         <figure className="wrapper">
-          <a href={blogRes.blogads.url} target="_blank" className="block border border-primary">
+          <a href={blogRes.blogads.url} target="_blank" rel="noopener noreferrer" className="block border border-primary">
             <Image src={blogRes.blogads.mobimg} priority className="block sm:hidden w-screen" width={400} height={300} alt={blogRes.blogads.alt} />
             <Image src={blogRes.blogads.img} className="hidden sm:block  w-screen" width={1294} height={334} alt={blogRes.blogads.alt} />
           </a>
@@ -191,7 +201,7 @@ export default async function PostSingle({ params }) {
           <div className="my-6 py-6 border-b">
             <div className="h2 text-2xl mb-4">Share Our Post</div>
             <div className="flex flex-wrap gap-4 my-3 *:rounded-sm *:flex *:gap-x-3 *:items-center *:text-white! *:no-underline! *:py-2 *:px-3">
-              <ShareBtns shareUrl={blogData} />
+              <ShareBtns shareUrl={blogData.url} />
             </div>
           </div>
 
