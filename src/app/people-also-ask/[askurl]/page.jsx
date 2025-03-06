@@ -144,7 +144,7 @@ export default async function AskSingle({ params }) {
           <div className="my-6 py-6 border-b">
             <div className="h2 text-2xl mb-4">Share Our People Also Ask</div>
             <div className="flex flex-wrap gap-4 my-3 *:rounded-sm *:flex *:gap-x-3 *:items-center *:text-white! *:no-underline! *:py-2 *:px-3">
-              <ShareBtns shareUrl={blogData} />
+              <ShareBtns shareUrl={askData.url} />
             </div>
           </div>
         </div>
