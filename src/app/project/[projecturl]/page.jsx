@@ -21,6 +21,7 @@ import ModalOthers from "@/components/modal-others";
 import NoWhatComponent from "@/components/no-what-component";
 import TailwindAccordion from "@/components/tailwind-accordion";
 import Four04ReadOnly from '@/components/four04-read-only';
+import Breadcrumb from '@/components/Breadcrumb';
 
 export default async function ProjectPage({ params }) {
   const formData = new URLSearchParams();
@@ -83,10 +84,11 @@ export default async function ProjectPage({ params }) {
             <li>
               <Link href={prop.homeurl} className="link">Dubai Housing</Link>
             </li>
-            <li><FontAwesomeIcon icon={faSlashForward} /></li>
+            <Breadcrumb />
+            { /*<li><FontAwesomeIcon icon={faSlashForward} /></li>
             <li>
               <Link href={prop.communitiesurl} className="link">Our  Communities</Link>
-            </li>
+            </li>*/ }
             <li><FontAwesomeIcon icon={faSlashForward} /></li>
             <li aria-current="page">{prop.propname}</li>
           </ol>
