@@ -74,7 +74,7 @@ export default async function ProjectPage({ params }) {
         </ul>
         {prop.offertext && <div className="bg-primary-600/[.25] px-3 py-2 my-6 rounded-lg border border-primary-600/[.3]">{prop.offertext}</div>}
         <div className="hidden md:block">
-          <Modal btnClasses="" projectName={prop.h1}>Enquire Now</Modal>
+          <Modal btnClasses="" projectName={prop.propname}>Enquire Now</Modal>
         </div>
       </div>
       {/* Project Breadcrumb */}
@@ -175,7 +175,7 @@ export default async function ProjectPage({ params }) {
         <div className="lg:absolute bg-white/[.85] min-h-full lg:w-1/2 lg:top-0 lg:left-0 xl:p-16 flex flex-col justify-center p-6">
           {prop.ebrohead && <h2 className="text-2xl md:text-4xl">{prop.ebrohead}</h2>}
           <TextComponent className="mb-6 ebrochure" itemObj={prop.ebrodesc} />
-          <Modal className="self-start px-6 rounded-full" projectName={prop.h1}><FontAwesomeIcon icon={faDownload} /> eBrochure</Modal>
+          <Modal className="self-start px-6 rounded-full" projectName={prop.propname}><FontAwesomeIcon icon={faDownload} /> eBrochure</Modal>
         </div>
       </div>
     </section>
@@ -292,7 +292,7 @@ export default async function ProjectPage({ params }) {
             <small className="text-base text-gray-500">Arrange Property Viewing today</small>
             <div className="font-serif text-2xl md:text-4xl">Don&apos;t Miss The Property Tour</div>
             <div className="py-4">Click below to Schedule</div>
-            <Modal btnClasses="rounded-full py-1.5" projectName={prop.h1}>Schedule Now</Modal>
+            <Modal btnClasses="rounded-full py-1.5" projectName={prop.propname}>Schedule Now</Modal>
           </div>
         </div>
       </div>
@@ -306,7 +306,7 @@ export default async function ProjectPage({ params }) {
           <div className='text-primary-200'>With a simple chat conversation, we resolve every query of yours- Enjoy Instant Support to grab Asset</div>
         </div>
         <div className="md:order-first ">
-          <Modal btnClasses="rounded-full text-nowrap" projectName={prop.h1}>Ask Any Question</Modal>
+          <Modal btnClasses="rounded-full text-nowrap" projectName={prop.propname}>Ask Any Question</Modal>
         </div>
       </div>
     </section>
