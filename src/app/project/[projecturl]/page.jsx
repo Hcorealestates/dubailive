@@ -252,7 +252,7 @@ export default async function ProjectPage({ params }) {
       </div>
     </div>
       <div className="wrapper relative z-1 -mt-60 md:pb-20">
-        <FloorPlan floorPlanObj={floorPlanData} projectName={prop.h1} />
+        <FloorPlan floorPlanObj={floorPlanData} projectName={prop.propname} />
       </div>
     </>}
 
@@ -318,7 +318,7 @@ export default async function ProjectPage({ params }) {
       </section>
     }
     <NoWhatComponent whatContent={prop.not_what} whatImage={prop.FooterImage} whatUrl={prop.projectsurl} buttonText="View All Properties" />
-    <Footer footerProject={result.footerproject} footerComm={result.footercomm} pageData={pagedata} staticInfo={result.staticpagedata} prop={prop} whatsappMessage={prop.h1} />
+    <Footer footerProject={result.footerproject} footerComm={result.footercomm} pageData={pagedata} staticInfo={result.staticpagedata} prop={prop} whatsappMessage={prop.propname} />
   </>
 }
 async function getProjectDetails(projectid) {
