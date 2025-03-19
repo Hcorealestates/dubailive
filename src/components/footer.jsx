@@ -140,7 +140,7 @@ export default function Footer({ footerProject = false, footerComm = false, page
             <ul className="space-y-1">
               <li className='py-3'><strong>Dubai Housing</strong></li>
               {staticInfo.address && <li className="flex gap-3 items-center"><FontAwesomeIcon icon={faLocationDot} /><span>{staticInfo.address}</span></li>}
-              {staticInfo.callnumberstatic && <li className='relative flex gap-3 items-center'><FontAwesomeIcon icon={faCirclePhone} /><a href={`tel:${staticInfo.callnumberstatic.split(' ').join('')}`} className='link hover:underline before:absolute before:inset-0'> {staticInfo.callnumberstatic}</a></li>}
+              {staticInfo.callnumberstatic && <li className='relative flex gap-3 items-center'><FontAwesomeIcon icon={faCirclePhone} /><a href={`tel:+${staticInfo.callnumberstatic.split(' ').join('')}`} className='link hover:underline before:absolute before:inset-0'> {`+${staticInfo.callnumberstatic}`}</a></li>}
               {staticInfo.email && <li className='relative flex gap-3 items-center'><FontAwesomeIcon icon={faEnvelopeDot} /><a href={`mailto:${staticInfo.email}`} className='link hover:underline before:absolute before:inset-0'>{staticInfo.email}</a></li>}
             </ul>
           </div>
@@ -186,7 +186,7 @@ export default function Footer({ footerProject = false, footerComm = false, page
         <FontAwesomeIcon className="text-2xl" icon={faWhatsapp} />
         <small className='block'>Whatsapp</small>
       </WhatsappLink>
-      {staticInfo.callnumberstatic && <a href={`tel:${staticInfo.callnumberstatic.split(' ').join('')}`} className='grow text-center text-phone self-center'><FontAwesomeIcon className="text-[20px]" icon={faPhone} /> <small className='block'>Call Us</small>
+      {staticInfo.callnumberstatic && <a href={`tel:+${staticInfo.callnumberstatic.split(' ').join('')}`} className='grow text-center text-phone self-center'><FontAwesomeIcon className="text-[20px]" icon={faPhone} /> <small className='block'>Call Us</small>
       </a>}
 
       <Modal className='grow bg-transparent hover:bg-transparent text-phone py-0 rounded-none px-0' projectName={whatsappMessage} ><FontAwesomeIcon className='text-2xl' icon={faEnvelope} />

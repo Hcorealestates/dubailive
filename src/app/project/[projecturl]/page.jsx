@@ -54,6 +54,14 @@ export default async function ProjectPage({ params }) {
   const pagedata = result.pagedata;
   const floorPlanData = resultProp.floorplan;
   const is404 = prop.is404;
+
+  const proCallnumber = prop.propcallnumber ? prop.propcallnumber : result.staticpagedata.callnumberstatic
+  const footerStaticInfo = { phone: { callnumberstatic: proCallnumber } };
+  result.staticpagedata = { ...result.staticpagedata, ...footerStaticInfo.phone };
+  
+  const proWhatsnumber = prop.propwhatsapp ? prop.propwhatsapp : pageData.whatsnumber
+  const footerWhats = { whatsapp: { whatsnumber: proWhatsnumber } };
+  const allPagedata = { ...pagedata, ...footerWhats.whatsapp }
   return <>
     {is404 === 'yes' && <Four04ReadOnly />}
     <Header headerObj={pagedata} />
@@ -318,7 +326,7 @@ export default async function ProjectPage({ params }) {
       </section>
     }
     <NoWhatComponent whatContent={prop.not_what} whatImage={prop.FooterImage} whatUrl={prop.projectsurl} buttonText="View All Properties" />
-    <Footer footerProject={result.footerproject} footerComm={result.footercomm} pageData={pagedata} staticInfo={result.staticpagedata} prop={prop} whatsappMessage={prop.propname} />
+    <Footer footerProject={result.footerproject} footerComm={result.footercomm} pageData={allPagedata} staticInfo={result.staticpagedata} prop={prop} whatsappMessage={prop.propname} />
   </>
 }
 async function getProjectDetails(projectid) {

@@ -46,8 +46,8 @@ export default function ProjectSticky({ prop }) {
       </div>
       {/* Phone & Whatsapp */}
       <div className="hidden self-center lg:flex gap-x-4">
-        <a href="" className="text-phone"><FontAwesomeIcon icon={faPhone} /> <span className="text-lg lg:text-xl">+97 1507 794 706</span></a>
-        <WhatsappLink className="text-whatsapp"><FontAwesomeIcon icon={faWhatsapp} /> <span className="text-lg lg:text-xl">Whatsapp</span> </WhatsappLink>
+        {prop.propcallnumber && <a href={`tel:+${prop.propcallnumber.split(' ').join('')}`} className="text-phone"><FontAwesomeIcon icon={faPhone} /> <span className="text-lg lg:text-xl">{`+${prop.propcallnumber}`}</span></a> }
+        {prop.propwhatsapp && <WhatsappLink className="text-whatsapp" phoneNumber={prop.propwhatsapp} message={prop.propname}><FontAwesomeIcon icon={faWhatsapp} /> <span className="text-lg lg:text-xl">Whatsapp</span> </WhatsappLink>}
       </div>
 
       {/* Sticky Search */}
