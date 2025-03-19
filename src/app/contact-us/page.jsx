@@ -30,7 +30,7 @@ export default async function ContactUs() {
           </div>}
           {staticInfo.callnumberstatic && <div className="pl-10 py-4 relative text-editor">
             <FontAwesomeIcon className="text-2xl -ml-10 float-left mt-2 text-gray-500" icon={faPhone} />
-            <span className="block text-gray-500 text-xl">Phone </span> <a href={`tel:${staticInfo.callnumberstatic.split(' ').join('')}`}>{staticInfo.callnumberstatic}</a>
+            <span className="block text-gray-500 text-xl">Phone </span> <a href={`tel:+${staticInfo.callnumberstatic.split(' ').join('')}`}>{`+${staticInfo.callnumberstatic}`}</a>
           </div>}
           {staticInfo.email && <div className="pl-10 pt-4 relative text-editor">
             <FontAwesomeIcon className="text-2xl -ml-10 float-left mt-2 text-gray-500" icon={faEnvelope} />
