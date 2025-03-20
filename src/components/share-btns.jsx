@@ -19,7 +19,7 @@ export default function ShareBtns({ shareUrl }) {
       <WhatsappIcon size={36} borderRadius={5} />
     </WhatsappShareButton>
 
-    <TelegramShareButton url={shareUrl.url}>
+    <TelegramShareButton url={shareUrl}>
       <TelegramIcon size={36} borderRadius={5} />
     </TelegramShareButton>
   </>;

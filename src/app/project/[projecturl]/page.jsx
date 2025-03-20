@@ -21,6 +21,7 @@ import ModalOthers from "@/components/modal-others";
 import NoWhatComponent from "@/components/no-what-component";
 import TailwindAccordion from "@/components/tailwind-accordion";
 import Four04ReadOnly from '@/components/four04-read-only';
+import Breadcrumb from '@/components/Breadcrumb';
 
 export default async function ProjectPage({ params }) {
   const formData = new URLSearchParams();
@@ -53,6 +54,14 @@ export default async function ProjectPage({ params }) {
   const pagedata = result.pagedata;
   const floorPlanData = resultProp.floorplan;
   const is404 = prop.is404;
+
+  const proCallnumber = prop.propcallnumber ? prop.propcallnumber : result.staticpagedata.callnumberstatic
+  const footerStaticInfo = { phone: { callnumberstatic: proCallnumber } };
+  result.staticpagedata = { ...result.staticpagedata, ...footerStaticInfo.phone };
+  
+  const proWhatsnumber = prop.propwhatsapp ? prop.propwhatsapp : pageData.whatsnumber
+  const footerWhats = { whatsapp: { whatsnumber: proWhatsnumber } };
+  const allPagedata = { ...pagedata, ...footerWhats.whatsapp }
   return <>
     {is404 === 'yes' && <Four04ReadOnly />}
     <Header headerObj={pagedata} />
@@ -73,7 +82,7 @@ export default async function ProjectPage({ params }) {
         </ul>
         {prop.offertext && <div className="bg-primary-600/[.25] px-3 py-2 my-6 rounded-lg border border-primary-600/[.3]">{prop.offertext}</div>}
         <div className="hidden md:block">
-          <Modal btnClasses="" projectName={prop.h1}>Enquire Now</Modal>
+          <Modal btnClasses="" projectName={prop.propname}>Enquire Now</Modal>
         </div>
       </div>
       {/* Project Breadcrumb */}
@@ -83,10 +92,11 @@ export default async function ProjectPage({ params }) {
             <li>
               <Link href={prop.homeurl} className="link">Dubai Housing</Link>
             </li>
-            <li><FontAwesomeIcon icon={faSlashForward} /></li>
+            <Breadcrumb />
+            { /*<li><FontAwesomeIcon icon={faSlashForward} /></li>
             <li>
               <Link href={prop.communitiesurl} className="link">Our  Communities</Link>
-            </li>
+            </li>*/ }
             <li><FontAwesomeIcon icon={faSlashForward} /></li>
             <li aria-current="page">{prop.propname}</li>
           </ol>
@@ -173,7 +183,7 @@ export default async function ProjectPage({ params }) {
         <div className="lg:absolute bg-white/[.85] min-h-full lg:w-1/2 lg:top-0 lg:left-0 xl:p-16 flex flex-col justify-center p-6">
           {prop.ebrohead && <h2 className="text-2xl md:text-4xl">{prop.ebrohead}</h2>}
           <TextComponent className="mb-6 ebrochure" itemObj={prop.ebrodesc} />
-          <Modal className="self-start px-6 rounded-full" projectName={prop.h1}><FontAwesomeIcon icon={faDownload} /> eBrochure</Modal>
+          <Modal className="self-start px-6 rounded-full" projectName={prop.propname}><FontAwesomeIcon icon={faDownload} /> eBrochure</Modal>
         </div>
       </div>
     </section>
@@ -250,7 +260,7 @@ export default async function ProjectPage({ params }) {
       </div>
     </div>
       <div className="wrapper relative z-1 -mt-60 md:pb-20">
-        <FloorPlan floorPlanObj={floorPlanData} projectName={prop.h1} />
+        <FloorPlan floorPlanObj={floorPlanData} projectName={prop.propname} />
       </div>
     </>}
 
@@ -290,7 +300,7 @@ export default async function ProjectPage({ params }) {
             <small className="text-base text-gray-500">Arrange Property Viewing today</small>
             <div className="font-serif text-2xl md:text-4xl">Don&apos;t Miss The Property Tour</div>
             <div className="py-4">Click below to Schedule</div>
-            <Modal btnClasses="rounded-full py-1.5" projectName={prop.h1}>Schedule Now</Modal>
+            <Modal btnClasses="rounded-full py-1.5" projectName={prop.propname}>Schedule Now</Modal>
           </div>
         </div>
       </div>
@@ -304,7 +314,7 @@ export default async function ProjectPage({ params }) {
           <div className='text-primary-200'>With a simple chat conversation, we resolve every query of yours- Enjoy Instant Support to grab Asset</div>
         </div>
         <div className="md:order-first ">
-          <Modal btnClasses="rounded-full text-nowrap" projectName={prop.h1}>Ask Any Question</Modal>
+          <Modal btnClasses="rounded-full text-nowrap" projectName={prop.propname}>Ask Any Question</Modal>
         </div>
       </div>
     </section>
@@ -316,7 +326,7 @@ export default async function ProjectPage({ params }) {
       </section>
     }
     <NoWhatComponent whatContent={prop.not_what} whatImage={prop.FooterImage} whatUrl={prop.projectsurl} buttonText="View All Properties" />
-    <Footer footerProject={result.footerproject} footerComm={result.footercomm} pageData={pagedata} staticInfo={result.staticpagedata} prop={prop} whatsappMessage={prop.h1} />
+    <Footer footerProject={result.footerproject} footerComm={result.footercomm} pageData={allPagedata} staticInfo={result.staticpagedata} prop={prop} whatsappMessage={prop.propname} />
   </>
 }
 async function getProjectDetails(projectid) {
