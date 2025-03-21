@@ -24,30 +24,30 @@ export default function AskSearch({ onClick, parentClass = 'max-w-3xl mx-6', inp
   const handleChange = (selected) => {
     router.push(selected[0].url, '_blank');
   };
-   return <>
-      <Suspense fallback={<LoadingCustom />}>
-         <form className={`${parentClass} relative w-full`}>
-            <span className="sr-only">Search</span>
-            <span className="absolute inset-y-0 left-4 flex items-center pl-2 z-10">
-            <FontAwesomeIcon className="text-primary/40" icon={faMagnifyingGlass} />
-            </span>
+  return <>
+    <Suspense fallback={<LoadingCustom />}>
+      <form className={`${parentClass} relative w-full`}>
+        <span className="sr-only">Search</span>
+        <span className="absolute inset-y-0 left-4 flex items-center pl-2 z-10">
+          <FontAwesomeIcon className="text-primary/40" icon={faMagnifyingGlass} />
+        </span>
 
-            <AsyncTypeahead
-               id="my-async-typeahead"
-               labelKey="label"
-               minLength={1}
-               onSearch={loadOptions}
-               options={options}
-               onChange={handleChange}
-               placeholder="Enter Ask Name"
-               className={`${inputClasses} `}
-               renderMenuItemChildren={options =>
-                  <div className="w-full flex gap-x-3">
-                     <span className="grow">{options.label}</span>{options.type}
-                  </div>
-               }
-            />
-         </form>
-      </Suspense>
+        <AsyncTypeahead
+          id="my-async-typeahead"
+          labelKey="label"
+          minLength={1}
+          onSearch={loadOptions}
+          options={options}
+          onChange={handleChange}
+          placeholder="Enter Ask Name"
+          className={`${inputClasses} `}
+          renderMenuItemChildren={options =>
+            <div className="w-full flex gap-x-3">
+              <span className="grow">{options.label}</span> <span className=" text-nowrap">{options.type}</span>
+            </div>
+          }
+        />
+      </form>
+    </Suspense>
   </>
 }
