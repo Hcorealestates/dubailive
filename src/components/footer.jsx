@@ -193,7 +193,7 @@ export default function Footer({ footerProject = false, footerComm = false, page
         <small className='block'>Enquiry</small>
       </Modal>
     </div>}
-    {scrollCustom && <a onClick={scrollToTop} className='fixed right-4 bottom-18 flex justify-center items-center bg-primary-600 hover:bg-primary-700 z-20 w-10 h-10 rounded-full cursor-pointer'><FontAwesomeIcon className='text-2xl text-white' icon={faChevronUp} /> <span className=' sr-only'>To the top!</span></a>}
+    {scrollCustom && <a onClick={scrollToTop} className='fixed right-4 bottom-22 flex justify-center items-center bg-gray-400 hover:bg-primary-700 z-20 w-9 h-9 rounded-full cursor-pointer'><FontAwesomeIcon className='text-xl text-white' icon={faChevronUp} /> <span className=' sr-only'>To the top!</span></a>}
   </>
 }
 

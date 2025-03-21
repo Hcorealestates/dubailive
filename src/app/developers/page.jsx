@@ -59,8 +59,7 @@ export default async function AllDevelopers() {
         <div className="pb-8">
           <h2 className="text-3xl mb-4">{result.staticpagedata.dev_h2}</h2>
           <p>{result.staticpagedata.devdescription}</p>
-
-          <div className="mt-10 flex flex-wrap gap-12">
+          <div className="mt-10 grid grid-cols-1 gap-12">
             <Suspense fallback={<LoadingCustom />}>
               <DeveloperList />
             </Suspense>
@@ -68,7 +67,6 @@ export default async function AllDevelopers() {
         </div>
       </section>
     </main>
-
     <Footer footerProject={result.footerproject} footerComm={result.footercomm} pageData={pagedata} staticInfo={result.staticpagedata} />
   </>
 }

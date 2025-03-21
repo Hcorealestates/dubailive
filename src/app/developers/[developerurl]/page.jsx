@@ -60,7 +60,7 @@ export default async function DeveloperSingle({ params }) {
         width={639}
         height={450}
         alt={developerData.h1}
-        className="block max-h-[450px] object-cover object-center sm:hidden"
+        className="block h-90 object-cover object-center sm:hidden"
       />
       <Image
         src={developerData.mainbannerimage}
@@ -73,7 +73,7 @@ export default async function DeveloperSingle({ params }) {
         <h1 className="text-3xl md:text-5xl mb-8 text-center text-white">{developerData.h1}</h1>
         <div className="flex justify-center flex-wrap gap-6 sm:gap-10 bg-white p-4 mb-8 rounded-lg text-center">
           <div className="max-w-48">
-            <DeveloperLogo developerLogo={{
+            <DeveloperLogo className='h-8 w-auto' developerLogo={{
               devimage: developerData.devimage,
               name: developerData.h1
             }} />
@@ -131,9 +131,9 @@ export default async function DeveloperSingle({ params }) {
           </div>
 
           {/* Community List */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 pb-2">
+          <div className="lg:col-span-9 grid grid-flow-col md:grid-flow-row md:gap-8 gap-4 md:grid-cols-2 lg:grid-cols-3 pb-2 max-md:overflow-auto">
             {community.projectondev.map(project =>
-              <DeveloperProject className="" devProject={project} key={project.id} />)}
+              <DeveloperProject className="border max-md:min-w-72" devProject={project} key={project.id} />)}
           </div>
           <div className="mt-6 mb-14">
             <ArrowLink arrowLink={community.comurl} arrowText={`More about ${community.comname}`} />

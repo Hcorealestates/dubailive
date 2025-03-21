@@ -58,10 +58,11 @@ export default async function ProjectPage({ params }) {
   const proCallnumber = prop.propcallnumber ? prop.propcallnumber : result.staticpagedata.callnumberstatic
   const footerStaticInfo = { phone: { callnumberstatic: proCallnumber } };
   result.staticpagedata = { ...result.staticpagedata, ...footerStaticInfo.phone };
-  
+
   const proWhatsnumber = prop.propwhatsapp ? prop.propwhatsapp : pageData.whatsnumber
   const footerWhats = { whatsapp: { whatsnumber: proWhatsnumber } };
   const allPagedata = { ...pagedata, ...footerWhats.whatsapp }
+  console.log(proWhatsnumber);
   return <>
     {is404 === 'yes' && <Four04ReadOnly />}
     <Header headerObj={pagedata} />
